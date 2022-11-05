@@ -3,7 +3,7 @@ import { Container } from "@mui/system";
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
-const Home = props => {
+const Dashboard = props => {
   return (
     <Container>
         <Grid>
@@ -23,4 +23,4 @@ const Home = props => {
   )
 };
 
-export default Home;
+export default Dashboard;
