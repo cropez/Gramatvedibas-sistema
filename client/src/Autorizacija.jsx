@@ -3,7 +3,7 @@ import { Container } from "@mui/system";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
-const Contact = () =>{
+const Autorizacija = () =>{
     return(
 <Container>
         <Grid>
@@ -20,4 +20,4 @@ const Contact = () =>{
     )
 };
 
-export default Contact;
+export default Autorizacija;
