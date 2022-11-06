@@ -25,6 +25,7 @@ export default function Autorizacija() {
   return (
     <ThemeProvider theme={theme}>
       <Container  maxWidth="xs">
+        <Grid container xs={12} mt={25} >
         <CssBaseline />
         <Box
           sx={{
@@ -72,6 +73,7 @@ export default function Autorizacija() {
             </Button>
           </Box>
         </Box>
+        </Grid>
       </Container>
     </ThemeProvider>
   );
