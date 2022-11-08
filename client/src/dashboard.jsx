@@ -62,6 +62,9 @@ export default function Dashboard() {
   };
 
   return (
+    <Container maxWidth="lg">
+      <Grid container xs={12} mt={20} >
+        <Grid item xs={12} >
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <StaticDatePicker
               displayStaticWrapperAs="desktop"
@@ -75,5 +78,8 @@ export default function Dashboard() {
               inputFormat="'Week of' MMM d"
             />
           </LocalizationProvider>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
