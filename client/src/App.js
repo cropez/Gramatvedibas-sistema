@@ -1,5 +1,5 @@
 import React from "react";
-import Dashboard from "./Dashboard";
+import Dashboard from "./dashboard";
 import Autorizacija from "./Autorizacija";
 import Dati from "./Dati";
 import Header from "./Header";
