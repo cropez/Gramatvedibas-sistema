@@ -177,6 +177,7 @@ export default function CustomPaginationActionsTable() {
             </TableContainer>
             </Box>
         </Grid>
+        <Grid>
         <Button
          variant="contained"
          >Back
@@ -189,6 +190,7 @@ export default function CustomPaginationActionsTable() {
          variant="contained"
          >Edit
          </Button>
+         </Grid>
         </Container>
     );
 }

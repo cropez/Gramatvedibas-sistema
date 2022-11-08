@@ -63,7 +63,7 @@ export default function Dashboard() {
 
   return (
     <Container maxWidth="lg">
-      <Grid container xs={12} mt={20} >
+      <Grid container xs={12} mt={20} lg={12}>
         <Grid item xs={12} >
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <StaticDatePicker
