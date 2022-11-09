@@ -1,85 +1,64 @@
-import * as React from 'react';
-import dayjs from 'dayjs';
-import isBetweenPlugin from 'dayjs/plugin/isBetween';
-import { styled } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
-import { PickersDay } from '@mui/x-date-pickers/PickersDay';
-import { Container } from '@mui/material';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box'
+import React from 'react'
+import moment from 'moment'
+import { css, StyleSheet } from 'aphrodite'
 
-dayjs.extend(isBetweenPlugin);
 
-const CustomPickersDay = styled(PickersDay, {
-  shouldForwardProp: (prop) =>
-    prop !== 'dayIsBetween' && prop !== 'isFirstDay' && prop !== 'isLastDay',
-})(({ theme, dayIsBetween, isFirstDay, isLastDay }) => ({
-  ...(dayIsBetween && {
-    borderRadius: 0,
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.common.white,
-    '&:hover, &:focus': {
-      backgroundColor: theme.palette.primary.dark,
-    },
-  }),
-  ...(isFirstDay && {
-    borderTopLeftRadius: '50%',
-    borderBottomLeftRadius: '50%',
-  }),
-  ...(isLastDay && {
-    borderTopRightRadius: '50%',
-    borderBottomRightRadius: '50%',
-  }),
-}));
-
-export default function Dashboard() {
-  const [value, setValue] = React.useState(dayjs('2022-11-07'));
-
-  const renderWeekPickerDay = (date, selectedDates, pickersDayProps) => {
-    if (!value) {
-      return <PickersDay {...pickersDayProps} />;
-    }
-
-    const start = value.startOf('week');
-    const end = value.endOf('week');
-
-    const dayIsBetween = date.isBetween(start, end, null, '[]');
-    const isFirstDay = date.isSame(start, 'day');
-    const isLastDay = date.isSame(end, 'day');
-
-    return (
-      <CustomPickersDay
-        {...pickersDayProps}
-        disableMargin
-        dayIsBetween={dayIsBetween}
-        isFirstDay={isFirstDay}
-        isLastDay={isLastDay}
-      />
-    );
-  };
-
+const Block = () => {
   return (
-    <Container maxWidth="lg">
-      <Grid container xs={12} mt={20} >
-        <Grid item xs={12} >
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <StaticDatePicker
-              displayStaticWrapperAs="desktop"
-              label="Week picker"
-              value={value}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
-              renderDay={renderWeekPickerDay}
-              renderInput={(params) => <TextField {...params} />}
-              inputFormat="'Week of' MMM d"
-            />
-          </LocalizationProvider>
-        </Grid>
-      </Grid>
-    </Container>
-  );
+    <div className={css(style.container)}>
+      <header className={css(style.header)}>
+        <div className={css(style.headerP)}>
+          Sessijas laiks
+        </div>
+        <div className={css(style.headerP, style.headerBold)}>
+          {moment(new Date()).format('LLL')}
+        </div>
+      </header>
+      <div className={css(style.container)}>
+      </div>
+    </div>
+  )
 }
+
+
+const style = StyleSheet.create({
+  container: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    position: 'relative',
+    minHeight: '100vh',
+    display: 'flex',
+    width: '100vw',
+    marginTop: 63
+  },
+  header: {
+    width: '100%',
+    flexShrink: 0,
+    display: 'flex',
+    padding: '12px 24px',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderBottom: 'solid 1px #aaa',
+  },
+  headerP: {
+    fontSize: 14,
+    color: '#000'
+  },
+  headerBold: {
+    fontSize: 12,
+    color: '#000',
+    fontWeight: 700
+  },
+  content: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    position: 'relative',
+    flexWrap: 'wrap',
+    display: 'flex',
+    height: '100%',
+    width: '100%'
+  }
+})
+
+
+export default Block
