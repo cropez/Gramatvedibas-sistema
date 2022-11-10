@@ -22,7 +22,7 @@ const style = StyleSheet.create({
     width: '100%',
     flexShrink: 0,
     display: 'flex',
-    padding: '12px 24px',
+    padding: '12px 30px',
     alignItems: 'center',
     justifyContent: 'space-between',
     borderBottom: 'solid 1px #aaa',

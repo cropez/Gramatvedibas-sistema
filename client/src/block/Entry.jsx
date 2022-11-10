@@ -21,7 +21,7 @@ const style = StyleSheet.create({
     width: '100%',
     flexShrink: 0,
     display: 'flex',
-    marginBottom: 8,
+    marginBottom: 12,
     alignItems: 'center',
     justifyContent: 'space-between'
   },
@@ -29,7 +29,10 @@ const style = StyleSheet.create({
     fontSize: 14,
     maxWidth: 250,
     marginLeft: 10,
-    color: '#222'
+    color: '#222',
+    '@media (max-width: 600px)': {
+      marginLeft: 0
+    }
   },
   window: {
     border: 'solid 1px #aaa',
@@ -39,7 +42,8 @@ const style = StyleSheet.create({
     fontWeight: 600,
     color: '#000',
     fontSize: 12,
-    width: 150,
+    height: 24,
+    width: 150
   }
 })
 

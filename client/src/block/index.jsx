@@ -2,6 +2,8 @@ import React from 'react'
 import { css, StyleSheet } from 'aphrodite'
 import SessionTime from '../SessionTime'
 import Categories from './Categories'
+import Tables from './Tables'
+import Stats from './Stats'
 
 
 const Block = () => {
@@ -10,6 +12,8 @@ const Block = () => {
       <SessionTime />
       <div className={css(style.content)}>
         <Categories />
+        <Stats />
+        <Tables />
       </div>
     </div>
   )
@@ -29,11 +33,19 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     position: 'relative',
-    padding: '40px 20px',
+    padding: '40px 30px',
     flexWrap: 'wrap',
-    // display: 'flex',
+    display: 'flex',
     height: '100%',
-    width: '100vw'
+    width: '100vw',
+    '@media (max-width: 900px)': {
+      flexWrap: 'wrap'
+    },
+    '@media (max-width: 600px)': {
+      flexDirection: 'column',
+      alignItems: 'unset',
+      flexWrap: 'unset'
+    }
   }
 })
 

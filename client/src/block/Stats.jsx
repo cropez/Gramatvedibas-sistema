@@ -1,5 +1,6 @@
 import React from 'react'
 import { css, StyleSheet } from 'aphrodite'
+import Select from './Select'
 import Entry from './Entry'
 
 
@@ -21,6 +22,38 @@ const productstats = [
 const Stats = () => {
   return (
     <div className={css(style.container)}>
+      <div className={css(style.section)}>
+        <div className={css(style.label)}>
+          <div>Kopeja statistika:</div>
+          <Select />
+          <div>Menesu skaits</div>
+        </div>
+        {
+          commonstats.map((s, i) => (
+            <Entry
+              key={i}
+              label={s}
+            />
+          ))
+        }
+      </div>
+      <div className={css(style.section)}>
+        <div className={css(style.label)}>
+          <div>Precu:</div>
+          <Select />
+          <div>statistika:</div>
+          <Select />
+          <div>Menesu skaits</div>
+        </div>
+        {
+          productstats.map((s, i) => (
+            <Entry
+              key={i}
+              label={s}
+            />
+          ))
+        }
+      </div>
     </div>
   )
 }
@@ -28,12 +61,37 @@ const Stats = () => {
 
 const style = StyleSheet.create({
   container: {
+    maxWidth: 550,
+    minWidth: 370,
+    width: '40%',
+    padding: 10,
+    '@media (max-width: 600px)': {
+      minWidth: 'unset',
+      maxWidth: 'unset',
+      marginBottom: 30,
+      width: '100%',
+      padding: 0
+    }
+  },
+  label: {
+    fontSize: 14,
+    width: '100%',
+    marginLeft: 20,
+    fontWeight: 600,
+    color: '#000',
+    display: 'flex',
+    marginBottom: 30,
+    alignItems: 'center',
+    '@media (max-width: 600px)': {
+      marginLeft: 0,
+    }
+  },
+  section: {
     flexDirection: 'column',
     alignItems: 'center',
+    marginBottom: 16,
     display: 'flex',
-    maxWidth: 550,
-    width: '40%',
-    padding: 10
+    width: '100%'
   }
 })
 
