@@ -2,6 +2,8 @@ import React from 'react'
 import { css, StyleSheet } from 'aphrodite'
 import SessionTime from '../SessionTime'
 import Categories from './Categories'
+import Tables from './Tables'
+import Stats from './Stats'
 
 
 const Block = () => {
@@ -10,6 +12,8 @@ const Block = () => {
       <SessionTime />
       <div className={css(style.content)}>
         <Categories />
+        <Stats />
+        <Tables />
       </div>
     </div>
   )
@@ -31,7 +35,7 @@ const style = StyleSheet.create({
     position: 'relative',
     padding: '40px 20px',
     flexWrap: 'wrap',
-    // display: 'flex',
+    display: 'flex',
     height: '100%',
     width: '100vw'
   }
