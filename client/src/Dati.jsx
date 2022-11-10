@@ -128,7 +128,7 @@ const rows = [
     createData('Sprite', 393, 1.45),
     createData('Fanta', 66, 1.39),
     createData('Āboli', 229, 2.21),
-].sort((a, b) => (a.calories < b.calories ? -1 : 1));
+].sort((a, b) => (a.Daudzums < b.Daudzums ? -1 : 1));
 
 export default function CustomPaginationActionsTable() {
     const [page, setPage] = React.useState(0);
@@ -175,10 +175,10 @@ export default function CustomPaginationActionsTable() {
                                           {row.name}
                                       </TableCell>
                                       <TableCell style={{ width: 160 }} align="right">
-                                          {row.calories}
+                                          {row.Daudzums}
                                       </TableCell>
                                       <TableCell style={{ width: 160 }} align="right">
-                                          {row.fat}
+                                          {row.cena}
                                       </TableCell>
                                   </TableRow>
                               ))}

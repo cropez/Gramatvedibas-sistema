@@ -9,8 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AddchartIcon from "@mui/icons-material/Addchart";
 import { withRouter } from "react-router-dom";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 const Header = (props) => {
@@ -50,7 +50,7 @@ const Header = (props) => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AddchartIcon
+          <AccountCircleIcon
             sx={{ display: { xs: "none", md: "flex", fontSize: 40 }, mr: 2 }}
           />
           <Typography
@@ -113,7 +113,7 @@ const Header = (props) => {
             </Menu>
           </Box>
 
-          <AddchartIcon
+          <AccountCircleIcon
             sx={{ display: { xs: "flex", flexDirection: "row-reverse", md: "none", fontSize: 40 }, mr: 1 }}
           />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
