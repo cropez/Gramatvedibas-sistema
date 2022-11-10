@@ -18,7 +18,7 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import TablePaginationActions from "@mui/material/TablePagination/TablePaginationActions";
-import { Button, Divider } from "@mui/material";
+import { Button} from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
 
@@ -96,24 +96,38 @@ TablePaginationActions.propTypes = {
     rowsPerPage: PropTypes.number.isRequired,
 };
 
-function createData(name, calories, fat) {
-    return { name, calories, fat };
+function createData(name, Daudzums, cena) {
+    return { name, Daudzums, cena };
 }
 
 const rows = [
-    createData('Cupcake', 305, 3.7),
-    createData('Donut', 452, 25.0),
-    createData('Eclair', 262, 16.0),
-    createData('Frozen yoghurt', 159, 6.0),
-    createData('Gingerbread', 356, 16.0),
-    createData('Honeycomb', 408, 3.2),
-    createData('Ice cream sandwich', 237, 9.0),
-    createData('Jelly Bean', 375, 0.0),
-    createData('KitKat', 518, 26.0),
-    createData('Lollipop', 392, 0.2),
-    createData('Marshmallow', 318, 0),
-    createData('Nougat', 360, 19.0),
-    createData('Oreo', 437, 18.0),
+    createData('Svaigas zivis', 305, 3.7),
+    createData('Fileja', 127, 4.2),
+    createData('Mencu aknas', 67, 3.3),
+    createData('Vistas cūkas ciskas', 27, 5.1),
+    createData('Twix', 121, 1.21),
+    createData('Mars', 232, 1.4),
+    createData('Snickers', 97, 1.55),
+    createData('Bounty', 131, 1.72),
+    createData('Šokolādes batoniņi', 334, 0.89),
+    createData('Šokolādes konfektes', 311, 7.2),
+    createData('Karameles', 132, 5.51),
+    createData('Sviests', 254, 2.20),
+    createData('Holandiešu siers', 155, 3.39),
+    createData('Gouda siers', 195, 5.76),
+    createData('Desu siers', 266, 2.64),
+    createData('Krējuma siers', 80, 2.80),
+    createData('Rīsi', 237, 3.10),
+    createData('Hercules', 229, 3.78),
+    createData('Prosa', 208, 2.80),
+    createData('Ananāsu konservi.', 308, 3.2),
+    createData('Zaļie zirnīši', 350, 1.58),
+    createData('Čipsi', 245, 4.78),
+    createData('Dabiskās sulas', 74, 3.58),
+    createData('Cola', 286, 1.78),
+    createData('Sprite', 393, 1.45),
+    createData('Fanta', 66, 1.39),
+    createData('Āboli', 229, 2.21),
 ].sort((a, b) => (a.calories < b.calories ? -1 : 1));
 
 export default function CustomPaginationActionsTable() {
@@ -137,7 +151,7 @@ export default function CustomPaginationActionsTable() {
            setInterval(() => setDateState(new Date()), 30000); 
     }, []);
   return (
-     <><Container maxWidth="xl" sx={{ backgroundColor: '#42a5f5', display: "flex", height: "200px" }}>
+     <><Container maxWidth="xl" sx={{ display: "flex", height: "200px" }}>
           <Grid container xs={12} justifyContent="center" mt={10} fontSize="xxx-large">
               <div>
                   {dateState.toLocaleString('en-LV', {
@@ -148,7 +162,7 @@ export default function CustomPaginationActionsTable() {
               </div>
           </Grid>
       </Container><Container maxWidth="xl">
-              <Grid mt={30}>
+              <Grid mt={3}>
                   <TableContainer component={Paper}>
                       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
                           <TableBody>

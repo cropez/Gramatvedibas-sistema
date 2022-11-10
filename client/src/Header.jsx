@@ -48,7 +48,7 @@ const Header = (props) => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl" sx={{ backgroundColor: '#1565c0' }}>
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AddchartIcon
             sx={{ display: { xs: "none", md: "flex", fontSize: 40 }, mr: 2 }}

@@ -9,16 +9,13 @@ import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import { PickersDay } from '@mui/x-date-pickers/PickersDay';
 import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box'
-import Divider from '@mui/material/Divider';
 import { useState, useEffect } from 'react';
-import { height } from '@mui/system';
-import Banner from './img/banner-1.png'
+import Banner from './img/banner-4.png'
 import CardMedia from "@mui/material/CardMedia"
 import './styles/img.css';
 
-dayjs.extend(isBetweenPlugin);
 
+dayjs.extend(isBetweenPlugin);
 
 const CustomPickersDay = styled(PickersDay, {
   shouldForwardProp: (prop) =>
@@ -73,7 +70,7 @@ export default function Dashboard() {
            setInterval(() => setDateState(new Date()), 30000); 
     }, []);
   return (
-    <> <Container maxWidth="xl" sx={{backgroundColor:'#42a5f5',display:"flex", height:"200px"}}>
+    <> <Container maxWidth="xl" sx={{display:"flex", height:"150px"}}>
       <Grid container xs={12} justifyContent="center" mt={10} fontSize="xxx-large">
       <div>
       {dateState.toLocaleString('en-LV', {
