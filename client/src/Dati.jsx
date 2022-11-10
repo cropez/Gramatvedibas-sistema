@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@mui/system";
-import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';

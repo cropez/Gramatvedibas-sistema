@@ -10,6 +10,7 @@ import { PickersDay } from '@mui/x-date-pickers/PickersDay';
 import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box'
+import Divider from '@mui/material/Divider';
 
 
 dayjs.extend(isBetweenPlugin);
@@ -65,8 +66,13 @@ export default function Dashboard() {
 
   return (
     <Container maxWidth="lg">
-      <Grid container xs={12} mt={20} lg={12}>
-        <Grid item xs={12} >
+      <Grid item xs={12} mt={15}>
+      <Divider>
+        Dashboard
+      </Divider>
+      </Grid>
+      <Grid container xs={12} mt={2} lg={12}>
+        <Grid item xs={12} display="flex" alignSelf="baseline">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <StaticDatePicker
               displayStaticWrapperAs="desktop"
@@ -81,6 +87,11 @@ export default function Dashboard() {
             />
           </LocalizationProvider>
         </Grid>
+      </Grid>
+      <Grid item xs={12} mt={3}>
+      <Divider>
+        Dashboard
+      </Divider>
       </Grid>
     </Container>
   );
