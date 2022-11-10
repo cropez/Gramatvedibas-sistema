@@ -13,7 +13,7 @@ import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider';
 import { useState, useEffect } from 'react';
 import { height } from '@mui/system';
-import Banner from './img/banner.png'
+import Banner from './img/banner-1.png'
 import CardMedia from "@mui/material/CardMedia"
 import './styles/img.css';
 
@@ -73,7 +73,7 @@ export default function Dashboard() {
            setInterval(() => setDateState(new Date()), 30000); 
     }, []);
   return (
-    <> <Container maxWidth="xl" sx={{backgroundColor:'#42a5f5',display:"flex", height:"150px"}}>
+    <> <Container maxWidth="xl" sx={{backgroundColor:'#42a5f5',display:"flex", height:"200px"}}>
       <Grid container xs={12} justifyContent="center" mt={10} fontSize="xxx-large">
       <div>
       {dateState.toLocaleString('en-LV', {
@@ -84,7 +84,7 @@ export default function Dashboard() {
     </div>
     </Grid>
     </Container>
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
         <Grid container xs={12} mt={2} lg={12}>
           <Grid item xs={12} display="flex" alignSelf="baseline" >
             <LocalizationProvider dateAdapter={AdapterDayjs}>
