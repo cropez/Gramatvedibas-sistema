@@ -29,7 +29,10 @@ const style = StyleSheet.create({
     fontSize: 14,
     maxWidth: 250,
     marginLeft: 10,
-    color: '#222'
+    color: '#222',
+    '@media (max-width: 600px)': {
+      marginLeft: 0
+    }
   },
   window: {
     border: 'solid 1px #aaa',

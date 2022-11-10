@@ -48,9 +48,16 @@ const style = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 8,
     display: 'flex',
+    minWidth: 250,
     maxWidth: 300,
     width: '20%',
     padding: 10,
+    '@media (max-width: 600px)': {
+      minWidth: 'unset',
+      maxWidth: 'unset',
+      marginBottom: 30,
+      width: '100%'
+    }
   },
   title: {
     fontSize: 13,

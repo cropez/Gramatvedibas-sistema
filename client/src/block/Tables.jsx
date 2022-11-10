@@ -49,7 +49,15 @@ const Tables = () => {
 const style = StyleSheet.create({
   container: {
     width: '30%',
-    padding: 10
+    minWidth: 300,
+    padding: 10,
+    '@media (max-width: 600px)': {
+      minWidth: 'unset',
+      maxWidth: 'unset',
+      marginBottom: 30,
+      width: '100%',
+      padding: 0
+    }
   },
   title: {
     fontSize: 14,

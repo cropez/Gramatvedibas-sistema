@@ -33,11 +33,19 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     position: 'relative',
-    padding: '40px 20px',
+    padding: '40px 30px',
     flexWrap: 'wrap',
     display: 'flex',
     height: '100%',
-    width: '100vw'
+    width: '100vw',
+    '@media (max-width: 900px)': {
+      flexWrap: 'wrap'
+    },
+    '@media (max-width: 600px)': {
+      flexDirection: 'column',
+      alignItems: 'unset',
+      flexWrap: 'unset'
+    }
   }
 })
 

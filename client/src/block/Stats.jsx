@@ -62,8 +62,16 @@ const Stats = () => {
 const style = StyleSheet.create({
   container: {
     maxWidth: 550,
+    minWidth: 370,
     width: '40%',
-    padding: 10
+    padding: 10,
+    '@media (max-width: 600px)': {
+      minWidth: 'unset',
+      maxWidth: 'unset',
+      marginBottom: 30,
+      width: '100%',
+      padding: 0
+    }
   },
   label: {
     fontSize: 14,
@@ -73,7 +81,10 @@ const style = StyleSheet.create({
     color: '#000',
     display: 'flex',
     marginBottom: 30,
-    alignItems: 'center'
+    alignItems: 'center',
+    '@media (max-width: 600px)': {
+      marginLeft: 0,
+    }
   },
   section: {
     flexDirection: 'column',
