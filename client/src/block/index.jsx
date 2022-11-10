@@ -22,7 +22,7 @@ const Block = () => {
 
 const style = StyleSheet.create({
   container: {
-    minHeight: 'calc(100vh - 100px)',
+    minHeight: 'calc(100vh - 550px)',
     flexDirection: 'column',
     alignItems: 'center',
     position: 'relative',

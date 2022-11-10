@@ -1,6 +1,5 @@
 import React from 'react'
 import { css, StyleSheet } from 'aphrodite'
-import SessionTime from '../SessionTime'
 
 
 const points = [

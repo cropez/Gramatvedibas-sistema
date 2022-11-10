@@ -41,9 +41,9 @@ const Header = (props) => {
       pageURL: "/block"
     },
     {
-      menuTitle: "Datu eksports",
-      pageURL: "/dashboard"
-    }
+      menuTitle: "Profile",
+      pageURL: "/profile"
+    },
   ];
 
   return (
@@ -57,7 +57,7 @@ const Header = (props) => {
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            href="/dashboard"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -130,12 +130,11 @@ const Header = (props) => {
             >
               Ekonomiskais bloks
             </Button>
-
             <Button
               variant="Outlined"
-              onClick={() => handleButtonClick("/dashboard")}
+              onClick={() => handleButtonClick("/profile")}
             >
-              Datu eksports
+              Profile
             </Button>
           </Box>
         </Toolbar>
