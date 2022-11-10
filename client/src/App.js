@@ -7,6 +7,7 @@ import Dashboard from "./dashboard"
 import Dati from "./Dati"
 //components
 import Header from "./Header"
+import Footer from "./footer"
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <Route exact from="/dashboard" render={props => <Dashboard {...props} />} />
         <Route exact path="/dati" render={props => <Dati {...props} />} />
       </Switch>
+      <Footer/>
     </>
   );
 }

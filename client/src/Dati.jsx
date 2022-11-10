@@ -135,8 +135,7 @@ export default function CustomPaginationActionsTable() {
 
     return (
         <Container maxWidth="xl">
-            <Grid mt={30} ml={30}>
-                <Box sx={{ width: "80%" }}>
+            <Grid mt={30}>
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
                             <TableBody>
@@ -185,11 +184,10 @@ export default function CustomPaginationActionsTable() {
                             </TableFooter>
                         </Table>
                     </TableContainer>
-                </Box>
             </Grid>
             <ThemeProvider theme={theme}>
-                <Grid container xs={12} justifyContent="space-between" width={"67%"} ml={30}>
-                    <Grid item xs={12} xl={1} mt={3}>
+                <Grid container xs={12} justifyContent="space-between">
+                    <Grid item xs={12} md={1} mt={3}>
                         <Button
                             variant="contained"
                             color='primary'
@@ -197,7 +195,7 @@ export default function CustomPaginationActionsTable() {
                         >Back
                         </Button>
                     </Grid>
-                    <Grid item xs={12} xl={1} mt={3}>
+                    <Grid item xs={12} md={1} mt={3}>
                         <Button
                             variant="contained"
                             fullWidth
@@ -205,7 +203,7 @@ export default function CustomPaginationActionsTable() {
                         >Add
                         </Button>
                     </Grid>
-                    <Grid item xs={12} xl={1} mt={3}>
+                    <Grid item xs={12} md={1} mt={3}>
                         <Button
                             variant="contained"
                             color='secondary'
@@ -213,7 +211,7 @@ export default function CustomPaginationActionsTable() {
                         >Edit
                         </Button>
                     </Grid>
-                    <Grid item xs={12} xl={1} mt={3}>
+                    <Grid item xs={12} md={1} mt={3}>
                         <Button
                             variant="contained"
                             color='error'
