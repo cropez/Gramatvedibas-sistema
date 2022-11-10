@@ -19,9 +19,19 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import TablePaginationActions from "@mui/material/TablePagination/TablePaginationActions";
-import { Button } from "@mui/material";
+import { Button, Divider } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#9e9e9e',
+        },
+        secondary: {
+            main: '#11cb5f',
+        },
+    },
+});
 
 function Dati(props) {
     const theme = useTheme();
@@ -125,72 +135,94 @@ export default function CustomPaginationActionsTable() {
 
     return (
         <Container maxWidth="xl">
-        <Grid mt={40}>
-            <Box sx={{width:"80%"}}>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
-                    <TableBody>
-                        {(rowsPerPage > 0
-                            ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                            : rows
-                        ).map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">
-                                    {row.name}
-                                </TableCell>
-                                <TableCell style={{ width: 160 }} align="right">
-                                    {row.calories}
-                                </TableCell>
-                                <TableCell style={{ width: 160 }} align="right">
-                                    {row.fat}
-                                </TableCell>
-                            </TableRow>
-                        ))}
+            <Grid mt={30} ml={30}>
+                <Box sx={{ width: "80%" }}>
+                    <TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+                            <TableBody>
+                                {(rowsPerPage > 0
+                                    ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                    : rows
+                                ).map((row) => (
+                                    <TableRow key={row.name}>
+                                        <TableCell component="th" scope="row">
+                                            {row.name}
+                                        </TableCell>
+                                        <TableCell style={{ width: 160 }} align="right">
+                                            {row.calories}
+                                        </TableCell>
+                                        <TableCell style={{ width: 160 }} align="right">
+                                            {row.fat}
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
 
-                        {emptyRows > 0 && (
-                            <TableRow style={{ height: 53 * emptyRows }}>
-                                <TableCell colSpan={6} />
-                            </TableRow>
-                        )}
-                    </TableBody>
-                    <TableFooter>
-                        <TableRow>
-                            <TablePagination
-                                rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-                                colSpan={3}
-                                count={rows.length}
-                                rowsPerPage={rowsPerPage}
-                                page={page}
-                                SelectProps={{
-                                    inputProps: {
-                                        'aria-label': 'rows per page',
-                                    },
-                                    native: true,
-                                }}
-                                onPageChange={handleChangePage}
-                                onRowsPerPageChange={handleChangeRowsPerPage}
-                                ActionsComponent={TablePaginationActions}
-                            />
-                        </TableRow>
-                    </TableFooter>
-                </Table>
-            </TableContainer>
-            </Box>
-        </Grid>
-        <Grid>
-        <Button
-         variant="contained"
-         >Back
-         </Button>
-        <Button
-         variant="contained"
-         >Add
-         </Button>
-        <Button
-         variant="contained"
-         >Edit
-         </Button>
-         </Grid>
+                                {emptyRows > 0 && (
+                                    <TableRow style={{ height: 53 * emptyRows }}>
+                                        <TableCell colSpan={6} />
+                                    </TableRow>
+                                )}
+                            </TableBody>
+                            <TableFooter>
+                                <TableRow>
+                                    <TablePagination
+                                        rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+                                        colSpan={3}
+                                        count={rows.length}
+                                        rowsPerPage={rowsPerPage}
+                                        page={page}
+                                        SelectProps={{
+                                            inputProps: {
+                                                'aria-label': 'rows per page',
+                                            },
+                                            native: true,
+                                        }}
+                                        onPageChange={handleChangePage}
+                                        onRowsPerPageChange={handleChangeRowsPerPage}
+                                        ActionsComponent={TablePaginationActions}
+                                    />
+                                </TableRow>
+                            </TableFooter>
+                        </Table>
+                    </TableContainer>
+                </Box>
+            </Grid>
+            <ThemeProvider theme={theme}>
+                <Grid container xs={12} justifyContent="space-between" width={"67%"} ml={30}>
+                    <Grid item xs={12} xl={1} mt={3}>
+                        <Button
+                            variant="contained"
+                            color='primary'
+                            fullWidth
+                        >Back
+                        </Button>
+                    </Grid>
+                    <Grid item xs={12} xl={1} mt={3}>
+                        <Button
+                            variant="contained"
+                            fullWidth
+                            color="success"
+                        >Add
+                        </Button>
+                    </Grid>
+                    <Grid item xs={12} xl={1} mt={3}>
+                        <Button
+                            variant="contained"
+                            color='secondary'
+                            fullWidth
+                        >Edit
+                        </Button>
+                    </Grid>
+                    <Grid item xs={12} xl={1} mt={3}>
+                        <Button
+                            variant="contained"
+                            color='error'
+                            fullWidth
+                        >Delete
+                        </Button>
+                    </Grid>
+                </Grid>
+            </ThemeProvider>
         </Container>
     );
 }
