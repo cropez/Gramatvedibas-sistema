@@ -23,6 +23,7 @@ const Header = (props) => {
   };
 
   const handleMenuClick = (pageURL) => {
+    console.log(pageURL)
     history.push(pageURL);
     setAnchorEl(null);
   };
@@ -38,7 +39,7 @@ const Header = (props) => {
     },
     {
       menuTitle: "Ekonomiskais bloks",
-      pageURL: "/ekonommiskaisblocks"
+      pageURL: "/block"
     },
     {
       menuTitle: "Datu eksports",
@@ -48,7 +49,7 @@ const Header = (props) => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl" sx={{backgroundColor: '#1565c0'}}>
+      <Container maxWidth="xl" sx={{ backgroundColor: '#1565c0' }}>
         <Toolbar disableGutters>
           <AddchartIcon
             sx={{ display: { xs: "none", md: "flex", fontSize: 40 }, mr: 2 }}
@@ -99,10 +100,13 @@ const Header = (props) => {
                 display: { xs: "block", md: "none" }
               }}
             >
-              {menuItems.map((menuItem) => {
+              {menuItems.map((menuItem, i) => {
                 const { menuTitle, pageURL } = menuItem;
                 return (
-                  <MenuItem onClick={() => handleMenuClick(pageURL)}>
+                  <MenuItem
+                    key={i}
+                    onClick={() => handleMenuClick(pageURL)}
+                  >
                     {menuTitle}
                   </MenuItem>
                 );
@@ -111,7 +115,7 @@ const Header = (props) => {
           </Box>
 
           <AddchartIcon
-            sx={{ display: { xs: "flex",  flexDirection: "row-reverse",md: "none", fontSize: 40 }, mr: 1 }}
+            sx={{ display: { xs: "flex", flexDirection: "row-reverse", md: "none", fontSize: 40 }, mr: 1 }}
           />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
@@ -123,7 +127,7 @@ const Header = (props) => {
 
             <Button
               variant="Outlined"
-              onClick={() => handleButtonClick("/ekonommiskaisblocks")}
+              onClick={() => handleButtonClick("/block")}
             >
               Ekonomiskais bloks
             </Button>

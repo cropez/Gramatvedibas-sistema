@@ -16,7 +16,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/autorizacija" render={props => <Autorizacija {...props} />} />
-        <Route exact path="/ekonomiskaisblocks" render={props => <Block {...props} />} />
+        <Route exact path="/block" render={props => <Block {...props} />} />
         <Route exact from="/dashboard" render={props => <Dashboard {...props} />} />
         <Route exact path="/dati" render={props => <Dati {...props} />} />
       </Switch>
