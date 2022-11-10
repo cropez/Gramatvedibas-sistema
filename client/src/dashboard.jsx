@@ -11,7 +11,11 @@ import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider';
-
+import { useState, useEffect } from 'react';
+import { height } from '@mui/system';
+import Banner from './img/banner.png'
+import CardMedia from "@mui/material/CardMedia"
+import './styles/img.css';
 
 dayjs.extend(isBetweenPlugin);
 
@@ -64,35 +68,45 @@ export default function Dashboard() {
     );
   };
 
+  const [dateState, setDateState] = useState(new Date());
+    useEffect(() => {
+           setInterval(() => setDateState(new Date()), 30000); 
+    }, []);
   return (
-    <Container maxWidth="lg">
-      <Grid item xs={12} mt={15}>
-      <Divider>
-        Dashboard
-      </Divider>
-      </Grid>
-      <Grid container xs={12} mt={2} lg={12}>
-        <Grid item xs={12} display="flex" alignSelf="baseline">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <StaticDatePicker
-              displayStaticWrapperAs="desktop"
-              label="Week picker"
-              value={value}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
-              renderDay={renderWeekPickerDay}
-              renderInput={(params) => <TextField {...params} />}
-              inputFormat="'Week of' MMM d"
-            />
-          </LocalizationProvider>
-        </Grid>
-      </Grid>
-      <Grid item xs={12} mt={3}>
-      <Divider>
-        Dashboard
-      </Divider>
-      </Grid>
+    <> <Container maxWidth="xl" sx={{backgroundColor:'#42a5f5',display:"flex", height:"150px"}}>
+      <Grid container xs={12} justifyContent="center" mt={10} fontSize="xxx-large">
+      <div>
+      {dateState.toLocaleString('en-LV', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: false,
+      })}
+    </div>
+    </Grid>
     </Container>
+    <Container maxWidth="lg">
+        <Grid container xs={12} mt={2} lg={12}>
+          <Grid item xs={12} display="flex" alignSelf="baseline" >
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <StaticDatePicker
+                displayStaticWrapperAs="desktop"
+                label="Week picker"
+                value={value}
+                onChange={(newValue) => {
+                  setValue(newValue);
+                } }
+                renderDay={renderWeekPickerDay}
+                renderInput={(params) => <TextField {...params} />}
+                inputFormat="'Week of' MMM d" />
+            </LocalizationProvider>
+            <CardMedia
+              className="img"
+              component="img"
+              image={Banner}
+              alt="Error"
+            />
+          </Grid>
+        </Grid>
+      </Container></>
   );
 }

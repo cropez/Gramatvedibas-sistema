@@ -13,8 +13,8 @@ import {
 
 export default function Social() {
     return (
-        <><Container>
-            <Grid container xs={12} className="footer">
+        <><Container maxWidth="xl" sx={{backgroundColor: '#1565c0'}}>
+            <Grid container xs={12} className="footer" display="flex" height="150px" mt={10}>
                 <Link href="https://www.youtube.com"
                     className="youtube social">
                     <FontAwesomeIcon icon={faYoutube} size="2x" />
