@@ -21,6 +21,7 @@ import TablePaginationActions from "@mui/material/TablePagination/TablePaginatio
 import { Button } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
+import TableHead from "@mui/material/TableHead";
 
 
 const theme = createTheme({
@@ -152,7 +153,7 @@ export default function CustomPaginationActionsTable() {
         setInterval(() => setDateState(new Date()), 30000);
     }, []);
     return (
-        <><Container maxWidth="xl" sx={{ display: "flex", height: "200px" }}>
+        <><Container maxWidth="xl" sx={{ display: "flex", height: "150px" }}>
             <Grid container xs={12} justifyContent="center" mt={10} fontSize="xxx-large">
                 <div>
                     {dateState.toLocaleString('en-LV', {
@@ -166,6 +167,13 @@ export default function CustomPaginationActionsTable() {
                 <Grid mt={3}>
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+                            <TableHead>
+                            <TableRow>
+                                <TableCell>Name</TableCell>
+                                <TableCell align="right">Daudzums</TableCell>
+                                <TableCell align="right">Cena</TableCell>
+                            </TableRow>
+                            </TableHead>
                             <TableBody>
                                 {(rowsPerPage > 0
                                     ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
