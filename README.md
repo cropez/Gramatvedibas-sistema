@@ -18,3 +18,7 @@ npm install dayjs
 npm install @mui/x-date-pickers
 // Install date library (if not already installed)
 npm install moment
+
+//credentionals
+EMAIL = 'mail@example.com'
+ PASSWORD = 'password'

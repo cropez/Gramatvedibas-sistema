@@ -3,7 +3,6 @@ import { Container } from "@mui/system";
 import Grid from "@mui/material/Grid";
 import { Button, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useState, useEffect } from "react";
 import Divider from "@mui/material/Divider";
 
 const theme = createTheme({
