@@ -20,5 +20,5 @@ npm install @mui/x-date-pickers
 npm install moment
 
 //credentionals
-EMAIL = 'mail@example.com'
- PASSWORD = 'password'
+EMAIL = mail@example.com
+PASSWORD = password

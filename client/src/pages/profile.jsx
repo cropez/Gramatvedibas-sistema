@@ -4,6 +4,9 @@ import Grid from "@mui/material/Grid";
 import { Button, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Divider from "@mui/material/Divider";
+import IMG from '../img/profile.png'
+import CardMedia from "@mui/material/CardMedia";
+import '../styles/img.css';
 
 const theme = createTheme({
   palette: {
@@ -25,7 +28,7 @@ export default function profile() {
         </Grid>
       </Container>
       <Container maxWidth="xl">
-        <Grid container mt={3}>
+        <Grid container xs={12} mt={3} justifyContent="space-between">
             <Grid item xs={12} mt={2}>
                 <Typography>Vards:test</Typography>
             </Grid>
@@ -42,6 +45,14 @@ export default function profile() {
             <Grid item xs={12} mt={2}>
                 <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </Typography>
+            </Grid>
+            <Grid item xs={12}>
+            <CardMedia
+              className="img"
+              component="img"
+              image={IMG}
+              alt="Error"
+            />
             </Grid>
         </Grid>
         <ThemeProvider theme={theme}>
