@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useHistory } from 'react-router-dom'
 import { AppBar } from "@mui/material";
 import { Box } from "@mui/material";
 import { Toolbar } from "@mui/material";
@@ -9,13 +10,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { withRouter } from "react-router-dom";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
-const Header = (props) => {
-  const { history } = props;
+const Header = () => {
+  const history = useHistory()
+
   const [anchorEl, setAnchorEl] = React.useState(null);
+
   const open = Boolean(anchorEl);
 
   const handleMenu = (event) => {
@@ -49,6 +51,13 @@ const Header = (props) => {
       pageURL: "/authorizacija"
     },
   ];
+
+  const onLogout = () => {
+    window.localStorage.removeItem('auth')
+    console.log('logout')
+
+    window.location.href = '/'
+  }
 
   return (
     <AppBar position="static">
@@ -142,7 +151,7 @@ const Header = (props) => {
             </Button>
             <Button
               variant="Outlined"
-              onClick={() => handleButtonClick("/authorizacija")}
+              onClick={onLogout}
             >
               Iziet
             </Button>
@@ -151,5 +160,7 @@ const Header = (props) => {
       </Container>
     </AppBar>
   );
-};
-export default withRouter(Header);
+}
+
+
+export default Header

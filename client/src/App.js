@@ -1,5 +1,5 @@
 import React from "react"
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch, Redirect } from "react-router-dom"
 //pages
 import Autorizacija from "./pages/Autorizacija"
 import Dashboard from "./pages/dashboard"
@@ -12,11 +12,25 @@ import Footer from "./components/footer"
 
 
 export default function App() {
+  const isAuth = !!window.localStorage.getItem('auth')
+  console.log(isAuth)
   return (
     <>
       <Header />
       <Switch>
-        <Route exact path="/autorizacija" render={props => <Autorizacija {...props} />} />
+        {
+          isAuth
+            ? <Redirect
+              exact
+              from="/"
+              to="/dashboard"
+            />
+            : <Route
+              exact
+              path="/"
+              render={props => <Autorizacija {...props} />}
+            />
+        }
         <Route exact from="/dashboard" render={props => <Dashboard {...props} />} />
         <Route exact path="/block" render={props => <Block {...props} />} />
         <Route exact path="/dati" render={props => <Dati {...props} />} />
