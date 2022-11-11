@@ -28,7 +28,11 @@ const style = StyleSheet.create({
     margin: '0 8px',
     borderRadius: 4,
     position: 'relative',
-    border: 'solid 1px #000'
+    border: 'solid 1px #000',
+    outline: 'solid 1px transparent',
+    ':active': {
+      outlineColor: '#000'
+    }
   },
   icon: {
     position: 'absolute',

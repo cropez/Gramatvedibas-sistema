@@ -10,9 +10,9 @@ import { PickersDay } from '@mui/x-date-pickers/PickersDay';
 import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { useState, useEffect } from 'react';
-import Banner from './img/banner-4.png'
+import Banner from '../img/banner-4.png'
 import CardMedia from "@mui/material/CardMedia"
-import './styles/img.css';
+import '../styles/img.css';
 
 
 dayjs.extend(isBetweenPlugin);
@@ -66,22 +66,22 @@ export default function Dashboard() {
   };
 
   const [dateState, setDateState] = useState(new Date());
-    useEffect(() => {
-           setInterval(() => setDateState(new Date()), 30000); 
-    }, []);
+  useEffect(() => {
+    setInterval(() => setDateState(new Date()), 30000);
+  }, []);
   return (
-    <> <Container maxWidth="xl" sx={{display:"flex", height:"150px"}}>
+    <> <Container maxWidth="xl" sx={{ display: "flex", height: "150px" }}>
       <Grid container xs={12} justifyContent="center" mt={10} fontSize="xxx-large">
-      <div>
-      {dateState.toLocaleString('en-LV', {
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: false,
-      })}
-    </div>
-    </Grid>
+        <div>
+          {dateState.toLocaleString('en-LV', {
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: false,
+          })}
+        </div>
+      </Grid>
     </Container>
-    <Container maxWidth="xl">
+      <Container maxWidth="xl">
         <Grid container xs={12} mt={2} lg={12}>
           <Grid item xs={12} display="flex" alignSelf="baseline" >
             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -91,7 +91,7 @@ export default function Dashboard() {
                 value={value}
                 onChange={(newValue) => {
                   setValue(newValue);
-                } }
+                }}
                 renderDay={renderWeekPickerDay}
                 renderInput={(params) => <TextField {...params} />}
                 inputFormat="'Week of' MMM d" />

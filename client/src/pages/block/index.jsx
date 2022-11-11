@@ -1,6 +1,6 @@
 import React from 'react'
 import { css, StyleSheet } from 'aphrodite'
-import SessionTime from '../SessionTime'
+import SessionTime from '../../components/SessionTime'
 import Categories from './Categories'
 import Tables from './Tables'
 import Stats from './Stats'
