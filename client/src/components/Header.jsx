@@ -44,6 +44,10 @@ const Header = (props) => {
       menuTitle: "Profile",
       pageURL: "/profile"
     },
+    {
+      menuTitle: "Iziet",
+      pageURL: "/authorizacija"
+    },
   ];
 
   return (
@@ -135,6 +139,12 @@ const Header = (props) => {
               onClick={() => handleButtonClick("/profile")}
             >
               Profile
+            </Button>
+            <Button
+              variant="Outlined"
+              onClick={() => handleButtonClick("/authorizacija")}
+            >
+              Iziet
             </Button>
           </Box>
         </Toolbar>
